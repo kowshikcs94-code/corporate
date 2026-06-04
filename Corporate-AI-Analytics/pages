@@ -1,0 +1,13 @@
+import plotly.express as px
+
+corr = df.select_dtypes(
+    include='number'
+).corr()
+
+fig = px.imshow(
+    corr,
+    text_auto=True,
+    aspect="auto"
+)
+
+st.plotly_chart(fig)
